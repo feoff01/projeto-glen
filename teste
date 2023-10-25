@@ -1,0 +1,8 @@
+import openai
+import ss
+
+openai.api_key = ss.API_KEY
+
+entrada= input('digite sua pergunta')
+sd = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": entrada}])
+print(sd.choices[0].message.content)
